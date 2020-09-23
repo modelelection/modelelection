@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!--Model Election and the election model are Copyright 2020 - David Fisher-->
 <html>
 <head>
 	<meta charset="utf-8">
@@ -1228,7 +1228,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="papaparse.min.js"></script>
 <script src="state_data.js"></script>
-<script src="calcData.js"></script>
+
 <canvas id="sliderCanvas" width="750" height="125"></canvas></center>
 <script>
     /*WHAT TO DO
@@ -1888,7 +1888,7 @@ function parseData(url,callBack) {
                 //GOP
                 if(states[i].bidenChance<states[i].trumpChance){states[i].color="hsl(0,48%,"+(107-((states[i].trumpChance-states[i].bidenChance)*100)*.5)+"%)";}
                 //TOSSUP
-                if(((Math.abs(states[i].trumpChance-states[i].bidenChance))*100)<=20){states[i].color=TOSSUP;}
+                //if(((Math.abs(states[i].trumpChance-states[i].bidenChance))*100)<=20){states[i].color=TOSSUP;}
 				
 				optionButtons.innerHTML='<input type="radio" id="chances" name="chances" value="chances" onclick="changeMap(0)"><label for="male">Chances</label><input type="radio" id="votemargin" name="margin" value="votemargin" onclick="changeMap(1)"><label for="votemargin">Vote Margin</label><input type="radio" id="notossups" name="notossups" value="notossups" onclick="changeMap(2)"><label for="notossups">No Toss Ups</label>';
 			}
@@ -1969,7 +1969,7 @@ function parseData(url,callBack) {
 		
 		if(statePieData[i][1]<statePieData[i][0]){pieData.push(statePieData[i][2]/538);pieColors.push("hsl(0,48%,"+(107-((statePieData[i][0]-statePieData[i][1])*100)*.5)+"%)");}
 		
-		if(((Math.abs(statePieData[i][0]-statePieData[i][1]))*100)<=20){pieData.push(statePieData[i][2]/538);pieColors.push(TOSSUP);}
+		//if(((Math.abs(statePieData[i][0]-statePieData[i][1]))*100)<=20){pieData.push(statePieData[i][2]/538);pieColors.push(TOSSUP);}
 	}
     
 	//p1.innerHTML=alaska.bidenPolls
