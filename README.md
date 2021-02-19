@@ -1,2 +1,2 @@
-# test
-Testing GitHub Pages
+# Model Election Data
+Linear regression data for predicting elections.
